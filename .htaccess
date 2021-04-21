@@ -1,0 +1,9 @@
+Options -MultiViews
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^localhost [NC]
+RewriteRule !^robots\.txt$ - [F]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]
+ErrorDocument 500 /500-error
+ErrorDocument 404 /404-page-not-found
+ErrorDocument 401 /404-page-not-found
